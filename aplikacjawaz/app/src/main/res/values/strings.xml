@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">aplikacja waz</string>
+    <string name="app_name">Retro Snake</string>
 
     <!-- MENU GLOWNE -->
     <string name="title">Retro Snake</string>
@@ -20,6 +20,9 @@
     <string name="back">Back to menu</string>
 
 
+    <!-- INSTRUKCJE -->
+    <string name="instrukt">Tu powinno byc cos po angielsku</string>
+
     <!-- NAJLEPSZE WYNIKI -->
     <string name="hs">High Scores</string>
 
@@ -37,5 +40,17 @@
     <string name="title_activity_game">game</string>
     <string name="title_activity_gameplay">gameplay</string>
     <string name="title_activity_gra1">gra1</string>
+
+    <string name="gameover">Game Over</string>
+    <string name="paused">Paused</string>
+    <string name="share">Share on Facebook</string>
+    <string name="ret">Return</string>
+    <string name="musicon">music on</string>
+    <string name="musicoff">music off</string>
+    <string name="your">Your score is</string>
+    <string name="title_activity_facebook">facebook</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="warn">Do you want to share this on Facebook</string>
 
 </resources>

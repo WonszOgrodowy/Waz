@@ -27,55 +27,31 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lang"
-        android:id="@+id/button1"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:background="@drawable/czycisk"
-        android:layout_below="@+id/title"
-        android:layout_centerHorizontal="true"
-        android:onClick="Lang"
-        android:layout_marginTop="114dp" />
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/music"
-        android:id="@+id/button2"
+        android:id="@+id/sbutton2"
         android:textSize="20dp"
         android:background="@drawable/czycisk"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/button1"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/set"
         android:onClick="Music"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/orient"
-        android:id="@+id/button3"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:background="@drawable/czycisk"
-        android:onClick="Orient"
-        android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back"
-        android:id="@+id/button5"
+        android:id="@+id/sbutton5"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:background="@drawable/czycisk"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/sbutton2"
         android:onClick="BackToMenu"
         android:layout_centerHorizontal="true" />
-
-
 
 </RelativeLayout>

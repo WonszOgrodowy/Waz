@@ -6,9 +6,6 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
-    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,20 +25,16 @@
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-            android:name=".HighScores"
-            android:label="@string/title_activity_high_scores" >
-        </activity>
-        <activity
             android:name=".Instructions"
             android:label="@string/title_activity_instructions" >
         </activity>
         <activity
-            android:name=".gameplay"
-            android:label="@string/title_activity_gameplay" >
-        </activity>
-        <activity
             android:name=".gra1"
             android:label="@string/title_activity_gra1" >
+        </activity>
+        <activity
+            android:name=".facebook2"
+            android:label="@string/title_activity_facebook">
         </activity>
     </application>
 

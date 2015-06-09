@@ -2,8 +2,11 @@ package com.example.dominik.aplikacjawaz;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,55 +19,53 @@ import android.widget.TextView;
 
 public class settings extends Activity {
 
+
+    SharedPreferences userPreferences;
+    SharedPreferences.Editor userPreferencesEditor;
+    int musicc;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_settings);
+        userPreferences  = getSharedPreferences("settings", 0);
 
-        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"fonts/XD.TTF");
-        TextView myTexview  = (TextView)findViewById(R.id.title);
-        TextView myTexview2 = (TextView)findViewById(R.id.set);
-        Button ButtonText   = (Button)findViewById(R.id.button1);
-        Button ButtonText2  = (Button)findViewById(R.id.button2);
-        Button ButtonText3  = (Button)findViewById(R.id.button3);
-        Button ButtonText4  = (Button)findViewById(R.id.button5);
+        //zmiana czcionki
+        changeFont();
 
-        myTexview.setTypeface(myTypeface);
-        myTexview2.setTypeface(myTypeface);
-        ButtonText.setTypeface(myTypeface);
-        ButtonText2.setTypeface(myTypeface);
-        ButtonText3.setTypeface(myTypeface);
-        ButtonText4.setTypeface(myTypeface);
-    }
+        Button button = (Button) findViewById(R.id.sbutton2);
+        int musica = userPreferences.getInt("music", 0);
 
-    public void Lang(View view){
-        Button button = (Button) findViewById(R.id.button1);
-        String lang = button.getText().toString();
+        if (musica == 1){
+            button.setText(R.string.musicon);
 
-        if (lang=="Language EN") button.setText("Language PL");
-        else button.setText("Language EN");
-    }
-
-    public void Music(View view){
-        Button button = (Button) findViewById(R.id.button2);
-        String music = button.getText().toString();
-
-        if (music=="Music ON") button.setText("Music OFF");
-        else button.setText("Music ON");
-    }
-
-
-    public void Orient(View v){
-
-        Button button = (Button) findViewById(R.id.button3);
-        String orient = button.getText().toString();
-
-        if (orient=="Orient V") button.setText("Orient H");
-        else button.setText("Orient V");
+        }
+        if (musica==0){
+            button.setText(R.string.musicoff);}
 
     }
+
+
+    public void Music(View view) {
+        Button button = (Button) findViewById(R.id.sbutton2);
+        int musicac = userPreferences.getInt("music",0);
+
+        if (musicac == 1){
+            button.setText(R.string.musicoff);
+            musicc=0;
+        }
+        if (musicac==0){
+            button.setText(R.string.musicon);
+            musicc=1;
+        }
+        userPreferencesEditor = userPreferences.edit();
+        userPreferencesEditor.putInt("music", musicc);
+        userPreferencesEditor.commit();
+    }
+
 
     public void BackToMenu(View view) {
         Intent intent = new Intent(this, menu.class);
@@ -85,5 +86,27 @@ public class settings extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void changeFont() {
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/XD.TTF");
+        TextView myTexview = (TextView) findViewById(R.id.title);
+        TextView myTexview2 = (TextView) findViewById(R.id.set);
+        Button ButtonText2 = (Button) findViewById(R.id.sbutton2);
+        Button ButtonText4 = (Button) findViewById(R.id.sbutton5);
+
+        myTexview.setTypeface(myTypeface);
+        myTexview2.setTypeface(myTypeface);
+        ButtonText2.setTypeface(myTypeface);
+        ButtonText4.setTypeface(myTypeface);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+
+        // On Menu or Back Press, Pause Game
+        if ((keyCode == KeyEvent.KEYCODE_MENU || keyCode ==  KeyEvent.KEYCODE_BACK) && event.getRepeatCount() == 0);
+        return true;
     }
 }

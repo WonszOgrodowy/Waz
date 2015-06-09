@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,11 +26,13 @@ public class Instructions extends Activity {
 
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"fonts/XD.TTF");
         TextView myTexview  = (TextView)findViewById(R.id.title);
-        TextView myTexview2 = (TextView)findViewById(R.id.hisc);
+        TextView myTexview2 = (TextView)findViewById(R.id.instr);
+        TextView myTexview3 = (TextView)findViewById(R.id.instrukt);
         Button button = (Button)findViewById(R.id.btm);
 
         myTexview.setTypeface(myTypeface);
         myTexview2.setTypeface(myTypeface);
+        myTexview3.setTypeface(myTypeface);
         button.setTypeface(myTypeface);
 
     }
@@ -52,5 +55,9 @@ public class Instructions extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if ((keyCode == KeyEvent.KEYCODE_MENU || keyCode ==  KeyEvent.KEYCODE_BACK) && event.getRepeatCount() == 0);
+        return true;
     }
 }

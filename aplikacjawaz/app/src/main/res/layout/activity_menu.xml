@@ -31,38 +31,16 @@
         android:onClick="Start"
         android:layout_marginTop="114dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/load"
-        android:id="@+id/button2"
-        android:textSize="20dp"
-        android:background="@drawable/czycisk"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/button1"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hscore"
-        android:id="@+id/button3"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:background="@drawable/czycisk"
-        android:layout_below="@+id/button2"
-        android:onClick="HighScoreButton"
-        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/settings"
         android:id="@+id/button4"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:textSize="20dp"
         android:background="@drawable/czycisk"
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/button5"
         android:onClick="onSettingsButton"
         android:layout_centerHorizontal="true" />
 
@@ -71,10 +49,10 @@
         android:layout_height="wrap_content"
         android:text="@string/instructions"
         android:id="@+id/button5"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:textSize="20dp"
         android:background="@drawable/czycisk"
-        android:layout_below="@+id/button4"
+        android:layout_below="@+id/button1"
         android:onClick="InstructionsButton"
         android:layout_centerHorizontal="true" />
 

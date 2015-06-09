@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2">
+
+
+
+    <FrameLayout
+        android:id="@+id/gameFrame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:layout_above="@+id/upArrow" />
+
+    <ImageView
+        android:id="@+id/leftArrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="leftClick"
+        android:src="@drawable/ster"
+        android:layout_above="@+id/downArrow"
+        android:layout_toLeftOf="@+id/downArrow"
+        android:layout_toStartOf="@+id/downArrow" />
+
+    <ImageView
+        android:id="@+id/rightArrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="rightClick"
+        android:src="@drawable/ster"
+        android:layout_alignTop="@+id/leftArrow"
+        android:layout_toRightOf="@+id/downArrow"
+        android:layout_toEndOf="@+id/downArrow" />
+
+    <ImageView
+        android:id="@+id/downArrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:onClick="downClick"
+        android:src="@drawable/ster"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/upArrow"
+        android:layout_alignStart="@+id/upArrow" />
+
+    <ImageView
+        android:id="@+id/upArrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:onClick="upClick"
+        android:src="@drawable/ster"
+        android:layout_above="@+id/rightArrow"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="25dp"
+        android:textColor="#000000"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/upArrow"
+        android:layout_toEndOf="@+id/upArrow" />
+
+
+
+</RelativeLayout>
