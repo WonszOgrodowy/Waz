@@ -28,7 +28,6 @@ public class gra1 extends Activity {
 
 
 
-    // Initialize Game Screen
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -93,12 +92,10 @@ public class gra1 extends Activity {
 
             public void onClick(DialogInterface dialog, int item) {
                 switch (item) {
-                    // Play Again
                     case 0:
                         game.setup();
                         game.invalidate();
                         break;
-                    // Go Back
                     case 1:
                         shareOnFacebook();
                         break;
@@ -126,19 +123,16 @@ public class gra1 extends Activity {
 
             public void onClick(DialogInterface dialog, int item) {
                 switch(item){
-                    // (Start Over)
                     case 1:
                         game.setup();
                         game.invalidate();
 
                         break;
 
-                    // (Go Back)
                     case 2:
                         mActivity.finish();
                         break;
 
-                    // Continue
                     default:
                         game.snake.stopped=false;
                         game.invalidate();

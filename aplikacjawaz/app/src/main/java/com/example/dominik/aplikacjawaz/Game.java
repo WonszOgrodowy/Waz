@@ -24,7 +24,8 @@ public class Game extends View {
     public boolean gameOver=false;
     private int score,frameRate;
     private boolean ster;
-
+/*    private MediaPlayer mySound;
+    SharedPreferences userPreferences;*/
 
 
     public Game(Context context,gra1 activity,TextView scoreView,boolean ster,int speed) {
@@ -86,7 +87,7 @@ public class Game extends View {
     }
 
     public void setup(){
-        //Reset Score
+
         score = -1;
         this.score();
         gameOver=false;
@@ -120,10 +121,8 @@ public class Game extends View {
             walls.add(new Block(squaresWidth-1,j,0)); //prawa sciana
         }
 
-        //Create Snake
         snake = new Snake();
 
-        //Create Food
         food = new Food(snake,walls);
 
         setupComplete = true;
@@ -240,6 +239,7 @@ public class Game extends View {
                     food.move(this, walls);
                     length++;
                     score();
+             //       musicPoint();
 
                     // jak idzie spoko to zeby usuwal ostatni blok bo rysuje kolejny dalej
                 }else
@@ -323,6 +323,12 @@ public class Game extends View {
         }
 
     }
+
+/*    void musicPoint(){
+        userPreferences  = getSharedPreferences("settings", 0);
+        mySound = MediaPlayer.create(this, R.raw.point);
+        if (userPreferences.getInt("music", 0) == 1) mySound.start();
+    }*/
 
 
 
