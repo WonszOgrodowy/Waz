@@ -33,6 +33,7 @@ public class menu extends Activity {
         mySound = MediaPlayer.create(this, R.raw.kebab);
 
 
+
         //Ustawianie czcionki dla tekstu
 
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/XD.TTF");

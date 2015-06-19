@@ -22,7 +22,7 @@ public class gra1 extends Activity {
     private TextView score;
     private Activity mActivity;
     SharedPreferences userPreferences, speedSetting;
-    private boolean snakeOriented=false;
+    private boolean ster=false;
     private int speed;
     private MediaPlayer mySound;
 
@@ -36,7 +36,7 @@ public class gra1 extends Activity {
 
         userPreferences = getSharedPreferences("settings", 0);
         speedSetting = getSharedPreferences("speed", 0);
-        if(userPreferences.getInt("controls",0) == 1)  snakeOriented = true;
+        if(userPreferences.getInt("controls",0) == 1)  ster = true;
         speed = speedSetting.getInt("speed", 1);
         mySound = MediaPlayer.create(this, R.raw.kebab);
         playmusic();
@@ -55,7 +55,7 @@ public class gra1 extends Activity {
         TextView myTexview  = (TextView)findViewById(R.id.score);
         myTexview.setTypeface(myTypeface);
 
-        game = new Game(this,this,score,snakeOriented,speed);
+        game = new Game(this,this,score,ster,speed);
         frameView = (FrameLayout) findViewById(R.id.gameFrame);
         frameView.addView(game);
 

@@ -1,6 +1,5 @@
 package com.example.dominik.aplikacjawaz;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -24,15 +23,18 @@ public class Game extends View {
     private gra1 mActivity;
     public boolean gameOver=false;
     private int score,frameRate;
-    private boolean snakeOriented;
+    private boolean ster;
 
-    public Game(Context context,gra1 activity,TextView scoreView,boolean snakeOriented,int speed) {
+
+
+    public Game(Context context,gra1 activity,TextView scoreView,boolean ster,int speed) {
         super(context);
         mActivity = activity;
         random = new Random();
         this.scoreView = scoreView;
-        this.snakeOriented = snakeOriented;
+        this.ster = ster;
         this.frameRate = 5*(speed+1);
+
 
 
     }
@@ -43,7 +45,6 @@ public class Game extends View {
         scoreView.setText(Integer.toString(this.score));
     }
 
-    @SuppressLint("DrawAllocation")
     protected void onDraw(Canvas canvas){
         if(!setupComplete) {
             setup();
@@ -169,7 +170,7 @@ public class Game extends View {
 
 
         public void turnLeft(){
-            if(snakeOriented){
+            if(ster){
                 this.direction -= 1;
                 if(this.direction < 0) this.direction = 3;
             }else if(this.direction != 0 && this.direction != 2)
@@ -178,7 +179,7 @@ public class Game extends View {
 
 
         public void turnRight(){
-            if(snakeOriented){
+            if(ster){
                 this.direction += 1;
                 if(this.direction > 3) this.direction = 0;
             }else if(this.direction != 0 && this.direction != 2)
@@ -187,13 +188,13 @@ public class Game extends View {
 
 
         public void turnDown(){
-            if(!snakeOriented && this.direction != 1 && this.direction != 3)
+            if(!ster && this.direction != 1 && this.direction != 3)
                 this.direction = 1;
         }
 
 
         public void turnUp(){
-            if(!snakeOriented && this.direction != 1 && this.direction != 3)
+            if(!ster && this.direction != 1 && this.direction != 3)
                 this.direction = 3;
         }
 
@@ -322,4 +323,7 @@ public class Game extends View {
         }
 
     }
+
+
+
 }
