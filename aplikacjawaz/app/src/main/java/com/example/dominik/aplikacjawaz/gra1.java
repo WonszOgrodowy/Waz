@@ -159,7 +159,7 @@ public class gra1 extends Activity {
 
         return true;
     }
-
+//muzyka REMOVE KEBAB 8 BIT
     void playmusic() {
         userPreferences = getSharedPreferences("settings", 0);
 
